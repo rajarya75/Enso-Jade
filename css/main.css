@@ -5946,7 +5946,7 @@ strong {
 .slide_location.myslide5 {
   background-image: url(../image/myslide5.png);
 }
-.container.in-frame {
+.container.in-frame.frame1 {
   width: 100%;
   height: 100vh;
   padding-top: 0;
