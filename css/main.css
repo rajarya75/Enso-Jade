@@ -2306,7 +2306,7 @@ strong {
 
 .footer_component {
   grid-row-gap: 10px;
-  background-color: var(--dark-slate-grey);
+  background-color: var(--snow);
   border-top: 1px solid rgba(191, 169, 145, 0.5);
   flex-direction: column;
   align-items: center;
@@ -3088,7 +3088,8 @@ strong {
 }
 
 .contact {
-  background-color: var(--dark-slate-grey);
+  background-image: url(../image/blue-bg.png);
+  background-size: cover;
   justify-content: center;
   align-items: flex-start;
   padding-left: 0;
@@ -3163,7 +3164,7 @@ strong {
 
 .form-container {
   z-index: 1;
-  border-left: 1px solid rgba(191, 169, 145, 0.5);
+  border-left: 1px solid var(--secondary);
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -3178,7 +3179,7 @@ strong {
 
 .fs-select_toggle-5 {
   background-color: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid rgba(191, 169, 145, 0.5);
+  border-bottom: 1px solid var(--secondary);
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -3198,7 +3199,7 @@ strong {
   color: var(--snow);
   background-color: rgba(0, 0, 0, 0);
   border: 0 solid #000;
-  border-bottom: 1px solid rgba(191, 169, 145, 0.5);
+  border-bottom: 1px solid var(--secondary);
   border-radius: 0;
   height: 60px;
   margin-bottom: 0;
@@ -4253,9 +4254,15 @@ strong {
 .contact_div {
   margin-bottom: 30px;
 }
+.contact_div .text-block-13 {
+  color: var(--secondary) !important;
+}
 
 .contact_div.is-last {
   margin-bottom: 0;
+}
+.contact_div.is-last svg {
+  color: var(--secondary) !important;
 }
 
 .div-block-26 {
@@ -5943,4 +5950,17 @@ strong {
   width: 100%;
   height: 100vh;
   padding-top: 0;
+}
+
+.map {
+  width: 100%;
+  height: 130vh;
+  background-image: url(../image/map.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.form-container .text-block-14,
+.form-container .text-placeholder {
+  color: var(--secondary);
 }
