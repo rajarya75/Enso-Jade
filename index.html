@@ -1630,6 +1630,29 @@
             },
         });
     </script>
+    <!-- new -->
+    <div id="passwordContainer">
+        <h2>Enter Password to Access</h2>
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+    <div id="protectedContent">
+        <h1>Protected Content</h1>
+        <p>This content is protected by a password.</p>
+    </div>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('passwordInput').value;
+            var correctPassword = '123456'; // Replace with your desired password
+
+            if (password === correctPassword) {
+                document.getElementById('passwordContainer').style.display = 'none';
+                document.getElementById('protectedContent').style.display = 'block';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+    </script>
 </body>
 
 </html>

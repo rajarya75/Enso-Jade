@@ -5964,3 +5964,22 @@ strong {
 .form-container .text-placeholder {
   color: var(--secondary);
 }
+
+#passwordContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000000;
+  background-color: var(--snow);
+}
+
+#protectedContent {
+  display: none;
+}
