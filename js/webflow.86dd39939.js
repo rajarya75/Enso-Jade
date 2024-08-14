@@ -38341,19 +38341,22 @@
                   addListeners();
                 }
               };
-          // function init2() {
-          //   siteId = $2("html").attr("data-wf-site");
-          //   formUrl = "https://webflow.com/api/v1/form/" + siteId;
-          //   if (retro && formUrl.indexOf("https://webflow.com") >= 0) {
-          //     formUrl = formUrl.replace("https://webflow.com", "https://formdata.webflow.com");
-          //   }
-          //   signFileUrl = `${formUrl}/signFile`;
-          //   $forms = $2(namespace + " form");
-          //   if (!$forms.length) {
-          //     return;
-          //   }
-          //   $forms.each(build);
-          // }
+          function init2() {
+            siteId = $2("html").attr("data-wf-site");
+            formUrl = "https://webflow.com/api/v1/form/" + siteId;
+            if (retro && formUrl.indexOf("https://webflow.com") >= 0) {
+              formUrl = formUrl.replace(
+                "https://webflow.com",
+                "https://formdata.webflow.com"
+              );
+            }
+            signFileUrl = `${formUrl}/signFile`;
+            $forms = $2(namespace + " form");
+            if (!$forms.length) {
+              return;
+            }
+            $forms.each(build);
+          }
           function build(i, el) {
             var $el = $2(el);
             var data2 = $2.data(el, namespace);
