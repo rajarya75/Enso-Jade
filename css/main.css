@@ -5920,7 +5920,11 @@ strong {
   }
 }
 
-/* New css */
+/* ================ New css ==================*/
+iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
 .display-flex {
   display: flex;
   align-items: center;
