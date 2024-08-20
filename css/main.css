@@ -3164,7 +3164,6 @@ strong {
 
 .form-container {
   z-index: 1;
-  border-left: 1px solid var(--secondary);
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -3571,6 +3570,7 @@ strong {
   padding-left: 4vw;
   display: flex;
   position: relative;
+  border-right: 1px solid var(--secondary);
 }
 
 .text-block-13 {
@@ -4106,7 +4106,7 @@ strong {
 }
 
 .icon_slider {
-  color: var(--primary);
+  color: var(--secondary);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -5228,8 +5228,15 @@ strong {
   .container.is-download {
     height: 300px;
     margin-top: 20px;
+    background-size: 350%;
   }
 
+  .container.in-frame.frame1 {
+    height: 50vh !important;
+  }
+  .container.in-frame.frame1 .w-slide {
+    height: 106% !important;
+  }
   .section.is-technical {
     padding: 100px 20px 30px;
   }
@@ -5986,4 +5993,80 @@ iframe {
 
 #protectedContent {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: 124vh;
+    background-position: -100px;
+  }
+}
+
+/* New contact form */
+#contactForm .mb-20 {
+  margin-bottom: 50px;
+}
+#contactForm .flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+#contactForm .flex-between div {
+  width: 100%;
+}
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+  width: 100%;
+  padding: 15px 5px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #6bb284;
+  color: var(--secondary);
+  font-size: 16px;
+}
+#contactForm select {
+  color: var(--secondary);
+}
+#contactForm select option {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#contactForm input:focus-visible,
+#contactForm select:focus-visible,
+#contactForm textarea:focus-visible {
+  border: 0;
+  outline: none;
+  border-bottom: 1px solid var(--snow);
+}
+#contactForm label {
+  color: #6bb284;
+}
+#contactForm textarea {
+  height: 60px;
+}
+#contactForm .submit-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+#contactForm .submit-btn button {
+  background-color: var(--primary);
+  color: var(--snow);
+  padding: 15px 60px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+#contactForm .submit-btn button:hover {
+  background-color: var(--snow);
+  color: var(--primary);
+}
+.paragraph_wrap.in-contact {
+  margin-bottom: 36px;
+}
+.w-form-done {
+  padding: 40px 20px;
+  font-size: 26px;
+  font-weight: 500;
 }

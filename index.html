@@ -58,9 +58,9 @@
 </head>
 
 <body class="body">
-    <!-- <div class="loader">
+    <div class="loader">
         <div class="logo_loader"><img src="image/logo1.png" loading="lazy" alt="" class="image-logo"></div>
-    </div> -->
+    </div>
     <nav class="nav_component">
         <a data-w-id="74ffed73-b090-a81b-77cd-1096671d6121" href="#" class="menu_icon w-inline-block"></a>
         <a href="/" aria-current="page" class="logo_nav is-mobile w-inline-block w--current">
@@ -785,8 +785,8 @@
                     <div class="contact_div">
                         <div class="text-block-13"> building adress<br />
                             <a href="/" rel="nofollow" target="_blank" class="contact_link"><span
-                                    class="big-caslon_span">Enso Jade Jumeirah Garden City 35-27 45B St - Al Satwa Dubai
-                                    - United Arab Emirates </span></a>
+                                    class="big-caslon_span">Enso Jade <br /> Jumeirah Garden City <br /> 35-27 45B St -
+                                    Al Satwa <br /> Dubai- United Arab Emirates </span></a>
                         </div>
                     </div>
                     <div class="contact_div">
@@ -869,19 +869,45 @@
                 </div>
                 <div class="form-block w-form">
                     <form id="contactForm">
-                        <label for="name">Name:</label><br>
-                        <input type="text" id="name" name="name" required><br><br>
-                        <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email" required><br><br>
-                        <label for="message">Message:</label><br>
-                        <textarea id="message" name="message" required></textarea><br><br>
-                        <button type="submit">Submit</button>
+                        <div class="flex-between mb-20">
+                            <div>
+                                <label for="name">Full Name*</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div>
+                                <label for="phone">Phone Number*</label>
+                                <input type="text" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="flex-between mb-20">
+                            <div>
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div>
+                                <label for="enquiry">Type of Enquiry*</label>
+                                <select id="enquiry" name="enquiry">
+                                    <option value="sales">Sales</option>
+                                    <option value="customerCare">Customer care</option>
+                                    <option value="pressAndMedia">Press and media</option>
+                                    <option value="investerRelations">Investor relations</option>
+                                    <option value="agentRelations">Agent relations</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-20">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit">Submit</button>
+                        </div>
                     </form>
                     <p id="responseMessage"></p>
-                    <div class="w-form-done">
+                    <div class="w-form-done" style="display:none;">
                         <div>Thank you! Your submission has been received!</div>
                     </div>
-                    <div class="w-form-fail">
+                    <div class="w-form-fail" style="display:none;">
                         <div>Oops! Something went wrong while submitting the form.</div>
                     </div>
                 </div>
@@ -1080,6 +1106,7 @@
     <script defer="" src="js/jquery.mousewheel.js"></script>
     <script defer="" src="js/jquery.keyboard.extension-extender.js"></script>
     <script defer="" src="js/jquery.keyboard.extension-typing.js"></script>
+    <script src="js/leadForm.js"></script>
     <script>
         document.querySelectorAll(".todelete").forEach((el) => el.remove());
     </script>
@@ -1208,45 +1235,6 @@
             }
         }
     </script> -->
-    <script>
-
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            // Send the data to the API
-            fetch('https://qaapi.enso.inc/api/lead', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-                        throw new Error('Failed to submit form');
-                    }
-                })
-                .then(data => {
-                    // Handle the response data
-                    document.getElementById('responseMessage').textContent = 'Form submitted successfully!';
-                })
-                .catch(error => {
-                    // Handle any errors
-                    document.getElementById('responseMessage').textContent = 'There was an error submitting the form.';
-                    console.error('Error:', error);
-                });
-        });
-
-    </script>
 </body>
 
 </html>
