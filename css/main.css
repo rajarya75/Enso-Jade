@@ -6419,4 +6419,7 @@ iframe {
   .contact_div a span {
     font-size: 16px !important;
   }
+  .nav_component .nav_link {
+    color: var(--snow);
+  }
 }
