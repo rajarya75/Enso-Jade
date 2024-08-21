@@ -2774,7 +2774,7 @@ strong {
 .loader {
   z-index: 20;
   background-color: var(--dark-slate-grey);
-  background-image: url("/image/blue-bg.png");
+  background-image: url("/image/video/loader.gif");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
