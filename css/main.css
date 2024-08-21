@@ -6330,21 +6330,24 @@ iframe {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
 }
 .popup-overlay.map .popup-content {
   background-image: url(../image/mapmodal.jpg);
-  border: 5px solid var(--secondary);
-  width: 98%;
-  height: 98vh;
+  width: 80%;
+  height: 100vh;
   background-position: -410px center;
 }
 .popup-content {
   background-image: url(../image/blue-bg.png);
   padding: 20px;
-  border-radius: 8px;
   text-align: center;
-  position: relative;
+  /* position: relative; */
   width: 800px;
+  transition: transform 0.5s ease;
+}
+.popup-content:hover {
+  transform: scale(1.2);
 }
 
 .close-btn {
@@ -6360,6 +6363,8 @@ iframe {
   right: 10px;
   font-size: 40px;
   cursor: pointer;
+  color: var(--secondary);
+  z-index: 10000;
 }
 
 #popup .form-container {
