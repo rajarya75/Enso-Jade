@@ -20,7 +20,7 @@
     <!---- custom scrollbar ---->
     <style>
         ::-webkit-scrollbar {
-            width: 0px;
+            width: 10px;
             height: 0px;
             padding: 05px;
         }
@@ -34,6 +34,7 @@
         ::-webkit-scrollbar-thumb {
             background: #9f7871;
             border: solid 1px #e0ccc6;
+            border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:window-inactive {
@@ -59,14 +60,7 @@
 </head>
 
 <body class="body">
-    <div class="loader">
-        <div class="logo_loader"><img src="image/logo1.png" loading="lazy" alt="" class="image-logo"></div>
-    </div>
     <!-- <div class="loader">
-        <video autoplay muted loop id="loaderVideo" class="background-video">
-            <source src="/image/video/enso.mp4" type="video/mp4">
-        </video>
-        <img src="/image/logo.png" alt="Loading Logo" class="loader-logo">
     </div> -->
     <nav class="nav_component">
         <a data-w-id="74ffed73-b090-a81b-77cd-1096671d6121" href="#" class="menu_icon w-inline-block"></a>
@@ -800,25 +794,25 @@
             <div class="contact_container">
                 <div class="div-block-26">
                     <div class="contact_div">
-                        <div class="text-block-13"> building adress<br />
+                        <div class="text-block-13"> building address<br />
                             <a href="/" rel="nofollow" target="_blank" class="contact_link"><span
-                                    class="big-caslon_span">Enso Jade <br /> Jumeirah Garden City <br /> 35-27 45B St -
-                                    Al Satwa <br /> Dubai- United Arab Emirates </span></a>
+                                    class="big-caslon_span">Enso Jade <br /> Jumeirah Garden City<br /> Next to City
+                                    Walk<br /> 45B St - Al Satwa<br /> Dubai - United Arab Emirates</span></a>
                         </div>
                     </div>
                     <div class="contact_div">
                         <div class="text-block-13">Developed by</div>
-                        <a rel="nofollow" href="/" target="_blank" class="logo_footer partner w-inline-block"><img
-                                src="image/logo1.png" loading="lazy" alt="" class="image-logo" /></a>
+                        <a href="/" rel="nofollow" target="_blank" class="contact_link"><span
+                                class="big-caslon_span">Enso Development LLC</span></a>
                     </div>
                     <div class="contact_div">
-                        <div class="text-block-13"> phone number<br /><a href="/" class="footer_link"><span
-                                    class="big-caslon_span">Contact Now</span></a>
+                        <div class="text-block-13"> phone number<br /><a href="tel:+97145663676"
+                                class="footer_link"><span class="big-caslon_span">+971 45 663 676</span></a>
                         </div>
                     </div>
                     <div class="contact_div">
-                        <div class="text-block-13"> email address<br /><a href="/" class="footer_link"><span
-                                    class="big-caslon_span">Contact Now</span></a>
+                        <div class="text-block-13"> email address<br /><a href="mailto:info@enso.inc"
+                                class="footer_link"><span class="big-caslon_span"> info@enso.inc </span></a>
                         </div>
                     </div>
                     <div class="contact_div is-last">
@@ -943,7 +937,8 @@
                 </div>
                 <div class="bottom">
                     <p>© 2024 Enso Development LLC. All Rights Reserved.</p>
-                    <p>Designed And Developed By : <a href="https://modtraa.com/" terget="_blank">Modtraa</a></p>
+                    <p>Designed And Developed By : <a href="https://modtraa.com/" target="_blank"><img
+                                src="/image/modtraa.png" alt=""> Modtraa</a></p>
                 </div>
             </div>
         </div>
@@ -1197,63 +1192,6 @@
             </div>
         </div>
     </div>
-    <!-- Contact form modal -->
-    <div class="popup-overlay" id="popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <div class="form-container">
-                <div class="paragraph_wrap in-contact">
-                    <div class="title_paragraph dark-bg in-contact">Contact us</div>
-                    <div class="text-block-14"> For any enquiries or appointment requests<br />
-                    </div>
-                </div>
-                <div class="form-block w-form">
-                    <form id="contactForm">
-                        <div class="flex-between mb-20">
-                            <div>
-                                <label for="name">Full Name*</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div>
-                                <label for="phone">Phone Number*</label>
-                                <input type="text" id="phone" name="phone" required>
-                            </div>
-                        </div>
-                        <div class="flex-between mb-20">
-                            <div>
-                                <label for="email">Email*</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div>
-                                <label for="enquiry">Type of Enquiry*</label>
-                                <select id="enquiry" name="enquiry">
-                                    <option value="sales">Sales</option>
-                                    <option value="customerCare">Customer care</option>
-                                    <option value="pressAndMedia">Press and media</option>
-                                    <option value="investerRelations">Investor relations</option>
-                                    <option value="agentRelations">Agent relations</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-20">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <div class="submit-btn">
-                            <button class="button_txt is-negative" type="submit">Submit</button>
-                        </div>
-                    </form>
-                    <p id="responseMessage"></p>
-                    <div class="w-form-done" style="display:none;">
-                        <div>Thank you! Your submission has been received!</div>
-                    </div>
-                    <div class="w-form-fail" style="display:none;">
-                        <div>Oops! Something went wrong while submitting the form.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- map modal -->
     <div class="popup-overlay map" id="popupmap">
         <div class="popup-content">
@@ -1411,34 +1349,6 @@
         initSlider('.slider2', '.slide2', '.prev2', '.next2');
         initSlider('.slider3', '.slide3', '.prev3', '.next3');
         initSlider('.slider4', '.slide4', '.prev4', '.next4');
-
-
-
-    </script>
-    <!-- contact form modal -->
-    <script>
-        // Select all elements with the class 'trigger'
-        const triggers = document.querySelectorAll('.trigger');
-
-        // Add click event listeners to all triggers
-        triggers.forEach(trigger => {
-            trigger.addEventListener('click', function () {
-                document.getElementById('popup').style.display = 'flex';
-            });
-        });
-
-        // Close button functionality
-        document.querySelector('.close-btn').addEventListener('click', function () {
-            document.getElementById('popup').style.display = 'none';
-        });
-
-        // Close popup when clicking outside the content area
-        document.querySelector('.popup-overlay').addEventListener('click', function (e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-            }
-        });
-
     </script>
     <!-- map modal -->
     <script>
