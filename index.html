@@ -969,25 +969,25 @@
             <div class="image-plani_container">
                 <div class="slider-container">
                     <div class="slider1">
-                        <div class="slide1">
+                        <div class="slide1 trigger">
                             <img src="image/1bhk1.png" alt="">
                         </div>
-                        <div class="slide1">
+                        <div class="slide1 trigger">
                             <img src="image/1bhk2.png" alt="">
                         </div>
-                        <div class="slide1">
+                        <div class="slide1 trigger">
                             <img src="image/1bhk3.png" alt="">
                         </div>
-                        <div class="slide1">
+                        <div class="slide1 trigger">
                             <img src="image/1bhk4.png" alt="">
                         </div>
-                        <div class="slide1">
+                        <div class="slide1 trigger">
                             <img src="image/1bhk5.png" alt="">
                         </div>
-                        <div class="slide1">
+                        <div class="slide1 trigger">
                             <img src="image/1bhk6.png" alt="">
                         </div>
-                        <div class="slide1">
+                        <div class="slide1 trigger">
                             <img src="image/1bhk7.png" alt="">
                         </div>
                     </div>
@@ -1038,28 +1038,28 @@
             <div class="image-plani_container">
                 <div class="slider-container">
                     <div class="slider2">
-                        <div class="slide2">
+                        <div class="slide2 trigger">
                             <img src="image/1bhks1.jpg" alt="">
                         </div>
-                        <div class="slide2">
+                        <div class="slide2 trigger">
                             <img src="image/1bhks2.jpg" alt="">
                         </div>
-                        <div class="slide2">
+                        <div class="slide2 trigger">
                             <img src="image/1bhks3.jpg" alt="">
                         </div>
-                        <div class="slide2">
+                        <div class="slide2 trigger">
                             <img src="image/1bhks4.jpg" alt="">
                         </div>
-                        <div class="slide2">
+                        <div class="slide2 trigger">
                             <img src="image/1bhks5.jpg" alt="">
                         </div>
-                        <div class="slide2">
+                        <div class="slide2 trigger">
                             <img src="image/1bhks6.jpg" alt="">
                         </div>
-                        <div class="slide2">
+                        <div class="slide2 trigger">
                             <img src="image/1bhks7.jpg" alt="">
                         </div>
-                        <div class="slide2">
+                        <div class="slide2 trigger">
                             <img src="image/1bhks8.jpg" alt="">
                         </div>
                     </div>
@@ -1108,13 +1108,13 @@
             <div class="image-plani_container">
                 <div class="slider-container">
                     <div class="slider3">
-                        <div class="slide3">
+                        <div class="slide3 trigger">
                             <img src="image/2bhk1.jpg" alt="">
                         </div>
-                        <div class="slide3">
+                        <div class="slide3 trigger">
                             <img src="image/2bhk2.jpg" alt="">
                         </div>
-                        <div class="slide3">
+                        <div class="slide3 trigger">
                             <img src="image/2bhk3.jpg" alt="">
                         </div>
                     </div>
@@ -1164,13 +1164,13 @@
             <div class="image-plani_container">
                 <div class="slider-container">
                     <div class="slider4">
-                        <div class="slide4">
+                        <div class="slide4 trigger">
                             <img src="image/2bhks1.jpg" alt="">
                         </div>
-                        <div class="slide4">
+                        <div class="slide4 trigger">
                             <img src="image/2bhks2.jpg" alt="">
                         </div>
-                        <div class="slide4">
+                        <div class="slide4 trigger">
                             <img src="image/2bhks3.jpg" alt="">
                         </div>
                     </div>
@@ -1188,6 +1188,63 @@
                         d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z">
                     </path>
                 </svg>
+            </div>
+        </div>
+    </div>
+    <!-- Contact form modal -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div class="form-container">
+                <div class="paragraph_wrap in-contact">
+                    <div class="title_paragraph dark-bg in-contact">Contact us</div>
+                    <div class="text-block-14"> For any enquiries or appointment requests<br />
+                    </div>
+                </div>
+                <div class="form-block w-form">
+                    <form id="contactForm">
+                        <div class="flex-between mb-20">
+                            <div>
+                                <label for="name">Full Name*</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div>
+                                <label for="phone">Phone Number*</label>
+                                <input type="text" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="flex-between mb-20">
+                            <div>
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div>
+                                <label for="enquiry">Type of Enquiry*</label>
+                                <select id="enquiry" name="enquiry">
+                                    <option value="sales">Sales</option>
+                                    <option value="customerCare">Customer care</option>
+                                    <option value="pressAndMedia">Press and media</option>
+                                    <option value="investerRelations">Investor relations</option>
+                                    <option value="agentRelations">Agent relations</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-20">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="submit-btn">
+                            <button class="button_txt is-negative" type="submit">Submit</button>
+                        </div>
+                    </form>
+                    <p id="responseMessage"></p>
+                    <div class="w-form-done" style="display:none;">
+                        <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="w-form-fail" style="display:none;">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1305,29 +1362,6 @@
             },
         });
     </script>
-    <!-- new -->
-    <!-- <div id="passwordContainer">
-        <h2>Enter Password to Access</h2>
-        <input type="password" id="passwordInput" placeholder="Enter password">
-        <button onclick="checkPassword()">Submit</button>
-    </div>
-    <div id="protectedContent">
-        <h1>Protected Content</h1>
-        <p>This content is protected by a password.</p>
-    </div>
-    <script>
-        function checkPassword() {
-            var password = document.getElementById('passwordInput').value;
-            var correctPassword = '123456'; 
-
-            if (password === correctPassword) {
-                document.getElementById('passwordContainer').style.display = 'none';
-                document.getElementById('protectedContent').style.display = 'block';
-            } else {
-                alert('Incorrect password. Please try again.');
-            }
-        }
-    </script> -->
     <!-- my slider -->
     <script>
         function initSlider(sliderClass, slideClass, prevButtonClass, nextButtonClass) {
@@ -1367,6 +1401,31 @@
         initSlider('.slider4', '.slide4', '.prev4', '.next4');
 
 
+
+    </script>
+    <!-- contact form modal -->
+    <script>
+        // Select all elements with the class 'trigger'
+        const triggers = document.querySelectorAll('.trigger');
+
+        // Add click event listeners to all triggers
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function () {
+                document.getElementById('popup').style.display = 'flex';
+            });
+        });
+
+        // Close button functionality
+        document.querySelector('.close-btn').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        // Close popup when clicking outside the content area
+        document.querySelector('.popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
 
     </script>
 </body>
