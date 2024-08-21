@@ -59,8 +59,14 @@
 </head>
 
 <body class="body">
-    <div class="loader">
+    <!-- <div class="loader">
         <div class="logo_loader"><img src="image/logo1.png" loading="lazy" alt="" class="image-logo"></div>
+    </div> -->
+    <div class="loader">
+        <video autoplay muted loop id="loaderVideo" class="background-video">
+            <source src="/image/video/enso.mp4" type="video/mp4">
+        </video>
+        <!-- <img src="/image/logo.png" alt="Loading Logo" class="loader-logo"> -->
     </div>
     <nav class="nav_component">
         <a data-w-id="74ffed73-b090-a81b-77cd-1096671d6121" href="#" class="menu_icon w-inline-block"></a>
@@ -787,7 +793,7 @@
                 <img src="image/amenities/prime.jpg" alt="">
             </div>
         </div>
-        <div class="map">
+        <div class="map mymap">
         </div>
         <div class="contact">
             <div id="contacts" class="ancor contacts"></div>
@@ -1248,6 +1254,12 @@
             </div>
         </div>
     </div>
+    <!-- map modal -->
+    <div class="popup-overlay map" id="popupmap">
+        <div class="popup-content">
+            <span class="close-btn1">&times;</span>
+        </div>
+    </div>
     <script src="js/jquery.min.js" type="text/javascript" crossorigin="anonymous"></script>
     <script src="js/webflow.86dd39939.js" type="text/javascript"></script>
     <!---- Inizio codice Base ---->
@@ -1418,6 +1430,24 @@
         // Close button functionality
         document.querySelector('.close-btn').addEventListener('click', function () {
             document.getElementById('popup').style.display = 'none';
+        });
+
+        // Close popup when clicking outside the content area
+        document.querySelector('.popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+    </script>
+    <!-- map modal -->
+    <script>
+        document.querySelector('.mymap').addEventListener('click', function () {
+            document.getElementById('popupmap').style.display = 'flex';
+        });
+
+        document.querySelector('.close-btn1').addEventListener('click', function () {
+            document.getElementById('popupmap').style.display = 'none';
         });
 
         // Close popup when clicking outside the content area
