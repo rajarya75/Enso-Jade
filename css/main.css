@@ -2591,10 +2591,10 @@ strong {
   bottom: 0;
   left: 100px;
   right: 100px;
-  transition: all 1s ease-in-out;
 }
 
-.header_background:hover {
+.header_background.myCustom {
+  transition: all 1s ease-in-out;
   top: 50px;
   left: 0;
   right: 0;
@@ -3084,21 +3084,13 @@ strong {
 }
 
 .image_location._01 {
-  background-image: url("../image/location01.png");
-  height: 44vh;
+  background-image: url("../image/location01.jpg");
+  height: 43vh;
 }
 
 .image_location._02 {
-  background-image: url("../image/location02.png");
+  background-image: url("../image/location02.jpg");
   height: 60vh;
-}
-
-.image_location._03 {
-  background-image: url("../image/location01.png");
-}
-
-.image_location._04 {
-  background-image: url("../image/location02.png");
 }
 
 .project,
@@ -6378,4 +6370,13 @@ iframe {
 }
 #popup #contactForm label {
   text-align: left;
+}
+.location .container.in-frame {
+  gap: 10px;
+}
+.location .grid_moodboard {
+  gap: 10px;
+  height: 100%;
+  overflow: hidden;
+  margin-top: 20px;
 }
