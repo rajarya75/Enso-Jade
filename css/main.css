@@ -6380,3 +6380,43 @@ iframe {
   overflow: hidden;
   margin-top: 20px;
 }
+.header_component .text-block-16 {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .header_background {
+    left: 0;
+    right: 0;
+    top: 210px;
+  }
+  .header_component {
+    padding-top: 60px;
+  }
+  .header_component .text-block-15 {
+    color: var(--primary);
+  }
+  .header_component .heading {
+    font-size: 20px;
+    padding-bottom: 0;
+  }
+  .interiors .paragraph_-container {
+    padding: 20px;
+    background-color: var(--white);
+  }
+  .prime {
+    flex-wrap: wrap;
+  }
+  .prime2 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .prime1,
+  .prime2,
+  .prime3 {
+    width: 100%;
+  }
+  .contact_div a span {
+    font-size: 16px !important;
+  }
+}
