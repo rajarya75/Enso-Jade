@@ -19,6 +19,10 @@
     <script defer="" src="js/draggabilly.pkgd.js"></script>
     <!---- custom scrollbar ---->
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         ::-webkit-scrollbar {
             width: 10px;
             height: 0px;
@@ -42,8 +46,8 @@
 </head>
 
 <body class="body">
-    <div class="loader">
-    </div>
+    <!-- <div class="loader">
+    </div> -->
     <nav class="nav_component">
         <a data-w-id="74ffed73-b090-a81b-77cd-1096671d6121" href="#" class="menu_icon w-inline-block"></a>
         <a href="/" aria-current="page" class="logo_nav is-mobile w-inline-block w--current">
@@ -55,11 +59,11 @@
                     <li class="list-item is-first">
                         <a href="#project" class="nav_link">Project</a>
                     </li>
-                    <li class="list-item">
-                        <a href="#location" class="nav_link">location</a>
-                    </li>
                     <li class="list-item is-last">
                         <a href="#lifestyle" class="nav_link">lifestyle</a>
+                    </li>
+                    <li class="list-item is-last">
+                        <a href="#amenities" class="nav_link">Amenities</a>
                     </li>
                 </ul>
                 <a href="/" aria-current="page" class="logo_nav w-inline-block w--current"><img src="image/logo.png"
@@ -71,8 +75,8 @@
                     <li class="list-item">
                         <a href="#floorplans" class="nav_link">Floorplans</a>
                     </li>
-                    <li class="list-item is-last">
-                        <a href="#amenities" class="nav_link">Amenities</a>
+                    <li class="list-item">
+                        <a href="#location" class="nav_link">location</a>
                     </li>
                 </ul>
             </div>
@@ -174,14 +178,19 @@
             </div>
             <div class="section">
                 <div class="container in-frame">
-                    <div class="project-images display-flex">
+                    <div class="gallery">
                         <div class="left">
-                            <img src="/image/p-left1.jpg" alt="" />
-                            <img src="/image/p-left2.jpg" alt="" />
+                            <div class="top">
+                                <div class="gallery-item"><img src="/image/gallery/gallery1.webp" alt=""></div>
+                                <div class="gallery-item"><img src="/image/gallery/gallery2.webp" alt=""></div>
+                            </div>
+                            <div class="bottom">
+                                <div class="gallery-item"><img src="/image/gallery/gallery3.webp" alt="" /></div>
+                            </div>
                         </div>
                         <div class="right">
-                            <img src="/image/p-right1.jpg" alt="" />
-                            <img src="/image/p-right2.jpg" alt="" />
+                            <div class="gallery-item"><img src="/image/gallery/gallery4.webp" alt="" /></div>
+                            <div class="gallery-item"><img src="/image/gallery/gallery5.webp" alt="" /></div>
                         </div>
                     </div>
                 </div>
@@ -802,6 +811,19 @@
                                 </svg>
                             </div>
                         </a>
+                        <a rel="nofollow" href="https://ae.linkedin.com/company/enso-development" target="_blank"
+                            class="social_icon w-inline-block">
+                            <div class="icon-embed social w-embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="iconify iconify--bx" width="100%" height="100%"
+                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                    <circle cx="4.983" cy="5.009" r="2.188" fill="currentColor"></circle>
+                                    <path
+                                        d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118c1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783c-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                        </a>
                         <a rel="nofollow" href="https://www.instagram.com/ensodevelopment/" target="_blank"
                             class="social_icon w-inline-block">
                             <div class="icon-embed social w-embed">
@@ -819,7 +841,26 @@
                                 </svg>
                             </div>
                         </a>
-                        <a rel="nofollow" href="https://twitter.com/" target="_blank"
+                        <a rel="nofollow" href="https://www.threads.net/@ensodevelopment" target="_blank"
+                            class="social_icon w-inline-block">
+                            <div class="icon-embed social w-embed">
+                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1015_657)">
+                                        <path
+                                            d="M14.8118 9.69304C14.9 9.72767 14.9746 9.76923 15.0559 9.80386C16.1881 10.3649 17.0152 11.1961 17.4491 12.2351C18.0593 13.6828 18.1135 16.0241 16.2763 17.9012C14.8729 19.335 13.1644 19.9792 10.7508 20H10.7373C8.01862 19.9792 5.93049 19.0441 4.5271 17.2224C3.27964 15.5946 2.63557 13.3365 2.61523 10.5104V10.4965C2.63557 7.65658 3.27964 5.39847 4.5271 3.77762C5.93727 1.95589 8.0254 1.02078 10.744 1H10.7576C13.483 1.02078 15.5983 1.94896 17.0424 3.76376C17.7542 4.66424 18.283 5.7448 18.6152 6.99854L17.0491 7.428C16.7712 6.40977 16.3576 5.537 15.8017 4.8374C14.6695 3.41743 12.9746 2.69012 10.744 2.67627C8.53388 2.69705 6.86608 3.41743 5.78134 4.83048C4.76439 6.14655 4.24235 8.05833 4.22201 10.4965C4.24235 12.9347 4.77117 14.8465 5.78134 16.1695C6.86608 17.5756 8.54066 18.303 10.744 18.3237C12.7373 18.3099 14.0525 17.825 15.1508 16.7029C16.4051 15.4284 16.3779 13.8629 15.9779 12.907C15.7407 12.346 15.3135 11.875 14.744 11.5286C14.6017 12.5953 14.2898 13.4404 13.7881 14.0915C13.1237 14.9573 12.1813 15.4214 10.9746 15.4907C10.0593 15.5392 9.18473 15.3175 8.49998 14.8604C7.6932 14.3132 7.21862 13.482 7.17117 12.5122C7.07625 10.6004 8.55422 9.22895 10.8593 9.09041C11.6796 9.04193 12.4457 9.07656 13.1508 9.20124C13.0559 8.61247 12.8661 8.14838 12.5881 7.80897C12.2017 7.34488 11.5983 7.10937 10.7983 7.10244H10.7712C10.1271 7.10244 9.2593 7.28254 8.71015 8.14145L7.37456 7.20634C8.12032 6.05651 9.32032 5.41925 10.7779 5.41925H10.8118C13.239 5.4331 14.683 6.98469 14.8254 9.67918H14.8186V9.68611L14.8118 9.69304ZM8.77117 12.4152C8.81862 13.4058 9.86947 13.8699 10.8864 13.8144C11.8763 13.759 13.0017 13.3642 13.1915 10.9191C12.683 10.8013 12.1135 10.7459 11.5101 10.7459C11.3271 10.7459 11.1373 10.7459 10.9542 10.7598C9.2932 10.8567 8.73727 11.681 8.77795 12.4152H8.77117Z"
+                                            fill="#6AC17E" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1015_657">
+                                            <rect width="17" height="19" fill="white"
+                                                transform="translate(1.61523 1)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </a>
+                        <a rel="nofollow" href="https://x.com/EnsoDevelopment" target="_blank"
                             class="social_icon w-inline-block">
                             <div class="icon-embed social w-embed">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
@@ -827,19 +868,6 @@
                                     <path
                                         d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z">
                                     </path>
-                                </svg>
-                            </div>
-                        </a>
-                        <a rel="nofollow" href="https://ae.linkedin.com/company/enso-development" target="_blank"
-                            class="social_icon w-inline-block">
-                            <div class="icon-embed social w-embed">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    aria-hidden="true" role="img" class="iconify iconify--bx" width="100%" height="100%"
-                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                    <circle cx="4.983" cy="5.009" r="2.188" fill="currentColor"></circle>
-                                    <path
-                                        d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118c1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783c-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"
-                                        fill="currentColor"></path>
                                 </svg>
                             </div>
                         </a>
@@ -901,7 +929,11 @@
         <div class="footer_component">
             <div class="footer_row">
                 <div class="top">
-                    <div><img src="image/logo.png" alt=""></div>
+                    <div>
+                        <img src="image/logo.png" alt=""><br />
+                        <a href="https://www.enso.inc/" target="_blank">A project by <img src="image/enso-logo.png"
+                                alt="" style="width: 40px; height: auto; margin-left: 3px;"></a>
+                    </div>
                     <div>
                         <a rel="noopener" href="privacy-policy.html" target="_blank" class="footer_link">Privacy
                             policy</a><br />
