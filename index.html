@@ -201,7 +201,7 @@
                         <div class="paragraph-heading_block in-download">
                             <div class="brochure-text">Artisan-crafted residences with meticulous detail, <br />
                                 strategically located and finished to the highest standards.</div>
-                            <a href="#contacts" target="_blank" class="button in-download w-inline-block">
+                            <a class="button in-download w-inline-block contactFormTrigger">
                                 <div class="button_txt is-negative">download brochure</div>
                             </a>
                         </div>
@@ -769,7 +769,7 @@
                 <img src="image/amenities/prime.jpg" alt="">
             </div>
         </div>
-        <div class="map mymap">
+        <div class="map">
         </div>
         <div class="contact">
             <div id="contacts" class="ancor contacts"></div>
@@ -912,6 +912,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
+                        <p class="required-field">*Required fields</p>
                         <div class="submit-btn">
                             <button class="button_txt is-negative" type="submit">Submit</button>
                         </div>
@@ -1198,10 +1199,77 @@
             </div>
         </div>
     </div>
-    <!-- map modal -->
-    <div class="popup-overlay map" id="popupmap">
-        <span class="close-btn1">&times;</span>
+    <!-- Contact Form modal -->
+    <div class="popup-overlay" id="popupForm">
         <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div class="form-container">
+                <div class="paragraph_wrap in-contact">
+                    <div class="title_paragraph dark-bg in-contact">DOWNLOAD BROCHURE</div>
+                </div>
+                <div class="form-block w-form">
+                    <form id="contactForm">
+                        <div class="flex-between mb-20">
+                            <div>
+                                <label for="name">Full Name*</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div>
+                                <label for="phone">Phone Number*</label>
+                                <input type="text" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="flex-between mb-20">
+                            <div>
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div>
+                                <label for="enquiry">Type of Enquiry*</label>
+                                <select id="enquiry" name="enquiry">
+                                    <option value="sales">Sales</option>
+                                    <option value="customerCare">Customer care</option>
+                                    <option value="pressAndMedia">Press and media</option>
+                                    <option value="investerRelations">Investor relations</option>
+                                    <option value="agentRelations">Agent relations</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-20">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <p class="required-field">*Required fields</p>
+                        <div class="submit-btn">
+                            <button class="button_txt is-negative thankYouTrigger" type="submit">Submit to Download
+                                Brochure</button>
+                        </div>
+                    </form>
+                    <p id="responseMessage"></p>
+                    <div class="w-form-done" style="display:none;">
+                        <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="w-form-fail" style="display:none;">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Thank you  modal -->
+    <div class="popup-overlay" id="popupForm1">
+        <div class="popup-content">
+            <span class="close-btn1">&times;</span>
+            <div class="thank-you">
+                <div class="left">
+                    <h2>Thank you</h2>
+                    <p>for submitting your interest</p>
+                    <small>Your file is ready to do download</small>
+                </div>
+                <div class="right">
+                    <img src="image/thanks.jpg" alt="">
+                </div>
+            </div>
         </div>
     </div>
     <script src="js/jquery.min.js" type="text/javascript" crossorigin="anonymous"></script>
@@ -1354,17 +1422,33 @@
         initSlider('.slider3', '.slide3', '.prev3', '.next3');
         initSlider('.slider4', '.slide4', '.prev4', '.next4');
     </script>
-    <!-- map modal -->
+    <!-- Contact Form modal -->
     <script>
-        document.querySelector('.mymap').addEventListener('click', function () {
-            document.getElementById('popupmap').style.display = 'flex';
+        document.querySelector('.contactFormTrigger').addEventListener('click', function () {
+            document.getElementById('popupForm').style.display = 'flex';
+        });
+
+        document.querySelector('.close-btn').addEventListener('click', function () {
+            document.getElementById('popupForm').style.display = 'none';
+        });
+
+        document.querySelector('.popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+    </script>
+    <!-- Thank you modal -->
+    <script>
+        document.querySelector('.thankYouTrigger').addEventListener('click', function () {
+            document.getElementById('popupForm1').style.display = 'flex';
         });
 
         document.querySelector('.close-btn1').addEventListener('click', function () {
-            document.getElementById('popupmap').style.display = 'none';
+            document.getElementById('popupForm1').style.display = 'none';
         });
 
-        // Close popup when clicking outside the content area
         document.querySelector('.popup-overlay').addEventListener('click', function (e) {
             if (e.target === this) {
                 this.style.display = 'none';
