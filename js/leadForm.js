@@ -108,15 +108,17 @@ document.addEventListener("DOMContentLoaded", function () {
           form.reset();
           submitButton.classList.remove("active-class");
 
-          // Trigger PDF download
-          const pdfUrl =
-            "https://ensojade.com/image/brochure/Jade_%20Brochure.pdf";
-          const a = document.createElement("a");
-          a.href = pdfUrl;
-          a.download = "Jade_ Brochure.pdf"; // The name of the downloaded file
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
+          // Add a delay before triggering PDF download
+          setTimeout(() => {
+            const pdfUrl =
+              "https://ensojade.com/image/brochure/Jade_%20Brochure.pdf";
+            const a = document.createElement("a");
+            a.href = pdfUrl;
+            a.download = "Jade_Brochure.pdf"; // The name of the downloaded file
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          }, 500); // Delay in milliseconds
         } else {
           document.querySelector(".w-form-fail").style.display = "block";
           document.querySelector(".w-form-done").style.display = "none";
