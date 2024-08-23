@@ -18,9 +18,9 @@ document
     };
 
     // Send data to the API using fetch
-    // Dev: https://betaapi.enco.inc/
+    // Dev: https://betaapi.enso.inc/
     // Pro: https://api.enso.inc/
-    fetch("https://betaapi.enco.inc/api/website/enquiry", {
+    fetch("https://betaapi.enso.inc/api/website/enquiry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
