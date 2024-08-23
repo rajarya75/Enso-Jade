@@ -109,7 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
           submitButton.classList.remove("active-class");
 
           // Trigger PDF download
-          const pdfUrl = "../image/brochure/Jade_ Brochure.pdf";
+          const pdfUrl =
+            "https://ensojade.com/image/brochure/Jade_%20Brochure.pdf";
           const a = document.createElement("a");
           a.href = pdfUrl;
           a.download = "Jade_ Brochure.pdf"; // The name of the downloaded file
