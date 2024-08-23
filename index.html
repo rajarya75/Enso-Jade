@@ -1232,7 +1232,7 @@
             </div>
         </div>
     </div>
-    <!-- Contact Form modal -->
+    <!-- Download Brochure modal -->
     <div class="popup-overlay" id="popupForm">
         <div class="popup-content">
             <span class="close-btn">&times;</span>
@@ -1241,7 +1241,7 @@
                     <div class="title_paragraph dark-bg in-contact">DOWNLOAD BROCHURE</div>
                 </div>
                 <div class="form-block w-form">
-                    <form id="contactForm">
+                    <form id="contactForm" class="downloadBrochure">
                         <div class="flex-between mb-20">
                             <div>
                                 <label for="name">Full Name*</label>
@@ -1274,8 +1274,8 @@
                         </div>
                         <p class="required-field">*Required fields</p>
                         <div class="submit-btn">
-                            <button class="button_txt is-negative thankYouTrigger" type="submit">Submit to Download
-                                Brochure</button>
+                            <button class="button_txt is-negative thankYouTrigger invalid" type="submit" disabled>Submit
+                                to Download Brochure</button>
                         </div>
                     </form>
                     <p id="responseMessage"></p>
@@ -1475,6 +1475,10 @@
             if (e.target === this) {
                 this.style.display = 'none';
             }
+        });
+
+        document.querySelector('.thankYouTrigger').addEventListener('click', function () {
+            document.getElementById('popupForm').style.display = 'none';
         });
 
     </script>

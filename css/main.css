@@ -6508,6 +6508,11 @@ iframe {
   width: 50px;
 }
 
+/* Form action */
+.invalid {
+  pointer-events: none;
+}
+
 @media (max-width: 770px) {
   .header_background {
     left: 0;
