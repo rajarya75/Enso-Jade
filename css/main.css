@@ -6522,6 +6522,9 @@ iframe {
   .gallery {
     height: 54vh !important;
   }
+  .intro_wrap {
+    width: 100% !important;
+  }
 }
 @media (max-width: 480px) {
   .gallery {
