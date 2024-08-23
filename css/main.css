@@ -6466,8 +6466,19 @@ iframe {
   height: auto;
 }
 .paragraph-heading_block.spetext,
-.paragraph_block.spetext{
+.paragraph_block.spetext {
   max-width: 500px;
+}
+
+.amenities .frame1 {
+  position: relative;
+}
+.amenities .frame1 .left_arrow img {
+  transform: rotate(180deg);
+}
+.amenities .frame1 .left_arrow,
+.amenities .frame1 .right_arrow {
+  top: 49%;
 }
 
 @media (max-width: 770px) {
