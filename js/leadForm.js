@@ -18,8 +18,6 @@ document
     };
 
     // Send data to the API using fetch
-    // Dev: https://betaapi.enso.inc/
-    // Pro: https://api.enso.inc/
     fetch("https://betaapi.enso.inc/api/website/enquiry", {
       method: "POST",
       headers: {
