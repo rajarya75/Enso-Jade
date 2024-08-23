@@ -3401,6 +3401,7 @@ strong {
 .video_container {
   width: 85vw;
   max-width: 1350px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.4);
 }
 
 .video {
@@ -6336,7 +6337,8 @@ iframe {
 }
 
 .close-btn,
-.close-btn1 {
+.close-btn1,
+.close-btn2 {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -6458,6 +6460,14 @@ iframe {
 .paragraph_block.spetext {
   max-width: 500px;
 }
+#popupForm2 .popup-content {
+  background-image: url(../image/specificationpupup.webp);
+  background-color: var(--snow);
+  background-size: cover;
+  background-position: center;
+  max-width: 1200px;
+  height: 100vh;
+}
 
 .amenities .frame1 {
   position: relative;
@@ -6469,6 +6479,7 @@ iframe {
 .amenities .frame1 .right_arrow {
   top: 49%;
 }
+/* containers padding update */
 .container.inverse.minh-700 {
   padding-bottom: 2vw;
 }
@@ -6483,6 +6494,18 @@ iframe {
 .container.in-frame.loc {
   padding-top: 3vw;
   padding-bottom: 0vw;
+}
+
+/* call btn */
+.call {
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  z-index: 1000;
+}
+.call img {
+  background: #fff;
+  width: 50px;
 }
 
 @media (max-width: 770px) {

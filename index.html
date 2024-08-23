@@ -7,6 +7,7 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="icon" href="image/favicon.png" type="image/png">
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,12 +43,15 @@
 </head>
 
 <body class="body">
-    <div class="loader">
+    <!-- <div class="loader">
         <video fullwidth autoplay muted loop>
             <source src="image/video/enso.mp4" type="video/mp4">
             <source src="image/video/enso.webm" type="video/webm">
             <source src="image/video/enso.ogv" type="video/ogg">
         </video>
+    </div> -->
+    <div class="call">
+        <a href="tel:+97145663676"><img src="image/call.png" alt=""></a>
     </div>
     <nav class="nav_component">
         <a data-w-id="74ffed73-b090-a81b-77cd-1096671d6121" href="#" class="menu_icon w-inline-block"></a>
@@ -629,7 +633,7 @@
                                     layouts ensure every room is bathed in sunlight. Featuring sleek kitchens and
                                     tranquil bathrooms adorned with modern designs and high-end finishes, these homes
                                     elevate everyday living to a realm of luxury. </p>
-                                <a href="#contacts" class="button w-inline-block">
+                                <a class="button w-inline-block specificationTrigger">
                                     <div class="button_txt">Check Specifications</div>
                                 </a>
                             </div>
@@ -1301,6 +1305,12 @@
             </div>
         </div>
     </div>
+    <!-- Specification modal -->
+    <div class="popup-overlay" id="popupForm2">
+        <div class="popup-content">
+            <span class="close-btn2">&times;</span>
+        </div>
+    </div>
     <script src="js/jquery.min.js" type="text/javascript" crossorigin="anonymous"></script>
     <script src="js/webflow.86dd39939.js" type="text/javascript"></script>
     <!-- virtual keyboard JS -->
@@ -1476,6 +1486,23 @@
 
         document.querySelector('.close-btn1').addEventListener('click', function () {
             document.getElementById('popupForm1').style.display = 'none';
+        });
+
+        document.querySelector('.popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+    </script>
+    <!-- Specification modal -->
+    <script>
+        document.querySelector('.specificationTrigger').addEventListener('click', function () {
+            document.getElementById('popupForm2').style.display = 'flex';
+        });
+
+        document.querySelector('.close-btn2').addEventListener('click', function () {
+            document.getElementById('popupForm2').style.display = 'none';
         });
 
         document.querySelector('.popup-overlay').addEventListener('click', function (e) {
