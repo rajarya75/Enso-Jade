@@ -9,18 +9,18 @@ document
     // Prepare data according to the API schema
     const jsonData = {
       name: formData.get("name"),
-      contactNumber: formData.get("phone"),
       email: formData.get("email"),
-      interest: formData.get("enquiry"),
-      status: "new",
-      source: "Enso Jade",
-      assignedTo: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      followUpDate: new Date().toISOString(),
-      interestedPropertyId: formData.get("message"),
+      mobileCode: "+971",
+      contactNumber: formData.get("phone"),
+      message: formData.get("message"),
+      typeOfEnquiry: formData.get("enquiry"),
+      from: "Enso Jade",
     };
 
     // Send data to the API using fetch
-    fetch("https://qaapi.enso.inc/api/lead", {
+    // Dev: https://betaapi.enco.inc/
+    // Pro: https://api.enso.inc/
+    fetch("https://betaapi.enco.inc/api/website/enquiry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
