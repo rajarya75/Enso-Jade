@@ -6456,6 +6456,20 @@ iframe {
   gap: 10px;
 }
 
+/* specification  */
+.image_-container.speimg {
+  width: 50vw;
+  height: auto;
+  min-height: auto;
+}
+.image_-container.speimg .image_cover {
+  height: auto;
+}
+.paragraph-heading_block.spetext,
+.paragraph_block.spetext{
+  max-width: 500px;
+}
+
 @media (max-width: 770px) {
   .header_background {
     left: 0;
