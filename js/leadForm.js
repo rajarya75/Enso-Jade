@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const requiredFields = form.querySelectorAll("[required]");
 
   function checkFormValidity() {
-    let allValid = Array.from(requiredFields).every(
+    const allValid = Array.from(requiredFields).every(
       (field) => field.value.trim() !== ""
     );
     submitButton.disabled = !allValid;
@@ -88,11 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          document.querySelector(".w-form-done").style.display = "block";
-          document.querySelector(".w-form-fail").style.display = "none";
-          form.reset();
-          submitButton.classList.remove("active-class");
-          triggerPDFDownload();
+          handleFormSuccess();
         } else {
           handleFormError(data.message || "Submission failed.");
         }
@@ -101,6 +97,16 @@ document.addEventListener("DOMContentLoaded", function () {
         handleFormError("Oops! Something went wrong while submitting the form.")
       );
   });
+
+  function handleFormSuccess() {
+    document.querySelector(".w-form-done").style.display = "block";
+    document.querySelector(".w-form-fail").style.display = "none";
+    form.reset();
+    submitButton.classList.remove("active-class");
+
+    // Trigger PDF download after a short delay
+    setTimeout(triggerPDFDownload, 300); // Adjust the delay if needed
+  }
 
   function handleFormError(message) {
     console.error("Error:", message);
