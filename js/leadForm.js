@@ -54,19 +54,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitButton = form.querySelector(".thankYouTrigger");
   const requiredFields = form.querySelectorAll("[required]");
 
+  // Function to check if all required fields are filled
   function checkFormValidity() {
-    const allValid = Array.from(requiredFields).every(
+    let allValid = Array.from(requiredFields).every(
       (field) => field.value.trim() !== ""
     );
     submitButton.disabled = !allValid;
     submitButton.classList.toggle("invalid", !allValid);
   }
 
+  // Attach input event listeners to all required fields
   requiredFields.forEach((field) =>
     field.addEventListener("input", checkFormValidity)
   );
-  checkFormValidity(); // Initial check
+  checkFormValidity(); // Initial validity check
 
+  // Function to handle form submission
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(form);
@@ -77,9 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
       contactNumber: formData.get("phone"),
       message: formData.get("message"),
       typeOfEnquiry: formData.get("enquiry"),
-      from: "Enso Jade",
+      from: "Contact Us",
     };
 
+    // Send the form data to the API
     fetch("https://betaapi.enso.inc/api/website/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -88,33 +92,27 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          handleFormSuccess();
+          openModal();
+          triggerPDFDownload();
+          form.reset();
+          submitButton.classList.remove("active-class");
+          checkFormValidity(); // Reset button state after form reset
         } else {
           handleFormError(data.message || "Submission failed.");
         }
       })
-      .catch((error) =>
+      .catch(() =>
         handleFormError("Oops! Something went wrong while submitting the form.")
       );
   });
 
-  function handleFormSuccess() {
-    document.querySelector(".w-form-done").style.display = "block";
-    document.querySelector(".w-form-fail").style.display = "none";
-    form.reset();
-    submitButton.classList.remove("active-class");
-
-    // Trigger PDF download after a short delay
-    setTimeout(triggerPDFDownload, 300); // Adjust the delay if needed
-  }
-
+  // Function to handle form submission errors
   function handleFormError(message) {
     console.error("Error:", message);
-    document.querySelector(".w-form-fail").style.display = "block";
-    document.querySelector(".w-form-done").style.display = "none";
-    document.getElementById("responseMessage").textContent = message;
+    alert(message); // Use your custom modal or message handling here
   }
 
+  // Function to trigger PDF download
   function triggerPDFDownload() {
     const pdfUrl = "https://ensojade.com/image/brochure/Jade_%20Brochure.pdf";
     const a = document.createElement("a");
@@ -123,5 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+  }
+
+  // Function to open the modal
+  function openModal() {
+    // Add your code to open the modal here
+    alert("Thank you! Your brochure will download shortly."); // Replace this with your custom modal code
   }
 });
