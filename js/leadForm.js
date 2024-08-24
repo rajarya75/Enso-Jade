@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
           openModal();
           triggerPDFDownload();
           form.reset();
-          submitButton.classList.remove("active-class");
           checkFormValidity(); // Reset button state after form reset
         } else {
           handleFormError(data.message || "Submission failed.");
@@ -118,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const a = document.createElement("a");
     a.href = pdfUrl;
     a.download = "Jade_Brochure.pdf"; // The name of the downloaded file
+    a.style.display = "none"; // Hide the link
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -125,7 +125,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to open the modal
   function openModal() {
-    // Add your code to open the modal here
-    alert("Thank you! Your brochure will download shortly."); // Replace this with your custom modal code
+    // Replace the alert with your custom modal logic
+    const modal = document.getElementById("thankYouModal"); // Assuming your modal has this ID
+    if (modal) {
+      modal.style.display = "block"; // Show the modal
+    } else {
+      alert("Thank you! Your brochure will download shortly."); // Fallback if modal doesn't exist
+    }
   }
 });
