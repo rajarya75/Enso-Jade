@@ -6516,6 +6516,13 @@ iframe {
 .invalid {
   pointer-events: none;
 }
+.button_txt .brochure-link {
+  color: var(--secondary);
+  text-decoration: none;
+}
+.button_txt:hover .brochure-link {
+  color: var(--snow);
+}
 
 @media (max-width: 770px) {
   .header_background {
