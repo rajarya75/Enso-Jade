@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       contactNumber: formData.get("phone"),
       message: formData.get("message"),
       typeOfEnquiry: formData.get("enquiry"),
-      from: "Contact Us",
+      from: "Ensojade",
     };
 
     // Send the form data to the API
@@ -92,10 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          openModal();
-          triggerPDFDownload();
           form.reset();
-          checkFormValidity(); // Reset button state after form reset
+          checkFormValidity();
         } else {
           handleFormError(data.message || "Submission failed.");
         }
@@ -108,29 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to handle form submission errors
   function handleFormError(message) {
     console.error("Error:", message);
-    alert(message); // Use your custom modal or message handling here
-  }
-
-  // Function to trigger PDF download
-  function triggerPDFDownload() {
-    const pdfUrl = "https://ensojade.com/image/brochure/Jade_%20Brochure.pdf";
-    const a = document.createElement("a");
-    a.href = pdfUrl;
-    a.download = "Jade_Brochure.pdf"; // The name of the downloaded file
-    a.style.display = "none"; // Hide the link
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
-
-  // Function to open the modal
-  function openModal() {
-    // Replace the alert with your custom modal logic
-    const modal = document.getElementById("thankYouModal"); // Assuming your modal has this ID
-    if (modal) {
-      modal.style.display = "block"; // Show the modal
-    } else {
-      alert("Thank you! Your brochure will download shortly."); // Fallback if modal doesn't exist
-    }
+    console.log(message);
   }
 });
