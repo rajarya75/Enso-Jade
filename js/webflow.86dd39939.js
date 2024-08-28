@@ -28297,7 +28297,7 @@
                   objectFit(this);
                 });
               }
-            } else if (mediaType === "video") {
+            } else if (mediaType === "video1") {
               if (media[i].readyState > 0) {
                 objectFit(media[i]);
               } else {
@@ -28332,10 +28332,10 @@
           if (Webflow.env("design")) {
             return;
           }
-          $("video").each(function () {
+          $("video1").each(function () {
             shouldPlay && $(this).prop("autoplay") ? this.play() : this.pause();
           });
-          $(".w-background-video--control").each(function () {
+          $(".w-background-video1--control").each(function () {
             if (shouldPlay) {
               showPauseButton($(this));
             } else {
@@ -28361,32 +28361,36 @@
           if (watcher.matches) {
             setAllBackgroundVideoStates(false);
           }
-          $("video:not([autoplay])").each(function () {
+          $("video1:not([autoplay])").each(function () {
             $(this)
               .parent()
-              .find(".w-background-video--control")
+              .find(".w-background-video1--control")
               .each(function () {
                 showPlayButton($(this));
               });
           });
-          $(document).on("click", ".w-background-video--control", function (e) {
-            if (Webflow.env("design")) return;
-            const btn = $(e.currentTarget);
-            const video = $(`video#${btn.attr("aria-controls")}`).get(0);
-            if (!video) return;
-            if (video.paused) {
-              const play = video.play();
-              showPauseButton(btn);
-              if (play && typeof play.catch === "function") {
-                play.catch(() => {
-                  showPlayButton(btn);
-                });
+          $(document).on(
+            "click",
+            ".w-background-video1--control",
+            function (e) {
+              if (Webflow.env("design")) return;
+              const btn = $(e.currentTarget);
+              const video1 = $(`video1#${btn.attr("aria-controls")}`).get(0);
+              if (!video1) return;
+              if (video1.paused) {
+                const play = video1.play();
+                showPauseButton(btn);
+                if (play && typeof play.catch === "function") {
+                  play.catch(() => {
+                    showPlayButton(btn);
+                  });
+                }
+              } else {
+                video1.pause();
+                showPlayButton(btn);
               }
-            } else {
-              video.pause();
-              showPlayButton(btn);
             }
-          });
+          );
         });
       })();
     },
@@ -28844,7 +28848,7 @@
               (!/^(button|input|textarea|select|a)$/i.test(tag) &&
                 !Number.isNaN(Number.parseFloat(el.tabIndex))) || // (E)
               /^audio$/i.test(tag) || // (F)
-              (/^video$/i.test(tag) && el.controls === true)
+              (/^video1$/i.test(tag) && el.controls === true)
             );
           }
           function handler(e) {
@@ -39541,7 +39545,7 @@
               data2.items = data2.images;
             }
             if (data2.embed) {
-              data2.embed.type = "video";
+              data2.embed.type = "video1";
               data2.items = [data2.embed];
             }
             if (data2.groupId) {
