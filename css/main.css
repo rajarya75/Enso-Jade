@@ -2532,7 +2532,7 @@ strong {
 }
 
 .section.blue_bg {
-  background-image: url("/image/blue-bg.png");
+  background-image: url("/image/blue-bg.webp");
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -2757,7 +2757,7 @@ strong {
 }
 
 .intro {
-  background-image: url("/image/blue-bg.png");
+  background-image: url("/image/blue-bg.webp");
   background-position: 0 0, 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -3138,7 +3138,7 @@ strong {
 }
 
 .contact {
-  background-image: url(../image/blue-bg.png);
+  background-image: url(../image/blue-bg.webp);
   background-size: cover;
   justify-content: center;
   align-items: flex-start;
@@ -6339,7 +6339,7 @@ iframe {
   background: rgba(0, 0, 0, 0.7);
 }
 .popup-content {
-  background-image: url(../image/blue-bg.png);
+  background-image: url(../image/blue-bg.webp);
   padding: 20px;
   text-align: center;
   position: relative;
