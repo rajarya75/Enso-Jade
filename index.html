@@ -44,9 +44,9 @@
 
 <body class="body">
     <div id="loader" class="myloader">
-        <video class="desktop-video" src="image/video/enso.mp4" autoplay muted
+        <video class="desktop-video" src="image/video/enso.mp4" autoplay muted playsinline
             poster="image/posters/desktop.webp"></video>
-        <video class="mobile-video" src="image/video/enso-mobile.mp4" autoplay muted
+        <video class="mobile-video" src="image/video/enso-mobile.mp4" autoplay muted playsinline
             poster="image/posters/mobile.webp"></video>
     </div>
     <div id="main-content">
@@ -1544,7 +1544,7 @@
 
     </script>
     <script>
-        // JavaScript to hide the loader after the video ends
+        // JavaScript to hide the loader and show the main content
         const loader = document.getElementById('loader');
         const mainContent = document.getElementById('main-content');
         const desktopVideo = loader.querySelector('.desktop-video');
@@ -1553,16 +1553,25 @@
         // Determine which video is playing based on screen size
         const activeVideo = window.innerWidth <= 767 ? mobileVideo : desktopVideo;
 
-        activeVideo.addEventListener('ended', () => {
-            // Fade out the loader
-            loader.classList.add('hidden');
-
-            // Show the main content with a fade-in effect
-            mainContent.style.display = 'block';
+        if (window.innerWidth <= 767) {
+            // On mobile devices, hide the loader after 8 seconds
             setTimeout(() => {
-                mainContent.style.opacity = '1';
-            }, 50); // Small delay to ensure display block is applied first
-        });
+                loader.classList.add('hidden');
+                mainContent.style.display = 'block';
+                setTimeout(() => {
+                    mainContent.style.opacity = '1';
+                }, 50); // Small delay to ensure display block is applied first
+            }, 8000);
+        } else {
+            // On desktop, hide the loader when the video ends
+            activeVideo.addEventListener('ended', () => {
+                loader.classList.add('hidden');
+                mainContent.style.display = 'block';
+                setTimeout(() => {
+                    mainContent.style.opacity = '1';
+                }, 50);
+            });
+        }
     </script>
 </body>
 
