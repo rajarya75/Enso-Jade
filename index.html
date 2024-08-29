@@ -1554,23 +1554,37 @@
         const activeVideo = window.innerWidth <= 767 ? mobileVideo : desktopVideo;
 
         if (window.innerWidth <= 767) {
-            // On mobile devices, hide the loader after 8 seconds
+            // On mobile devices, try to play the video automatically
+            mobileVideo.muted = true; // Ensure the video is muted
+            mobileVideo.play().catch(error => {
+                // If autoplay fails, add an event listener to play when the user interacts
+                mobileVideo.addEventListener('click', () => {
+                    mobileVideo.play();
+                });
+            });
+
+            // Hide the loader after 8 seconds
             setTimeout(() => {
                 loader.classList.add('hidden');
                 mainContent.style.display = 'block';
-                // setTimeout(() => {
-                //     mainContent.style.opacity = '1';
-                // }, 50); 
-            }, 6000);
+            }, 6000); // Set to 8 seconds
         } else {
-            // On desktop, hide the loader when the video ends
-            activeVideo.addEventListener('ended', () => {
+            // On desktop, preload the video and hide the loader as soon as the video can play
+            desktopVideo.preload = "auto";
+            desktopVideo.addEventListener('canplay', () => {
+                // Video is ready to play
                 loader.classList.add('hidden');
                 mainContent.style.display = 'block';
-                // setTimeout(() => {
-                // mainContent.style.opacity = '1';
-                // }, 50);
+                desktopVideo.play();
             });
+
+            // Add a timeout to hide the loader if the video takes too long
+            setTimeout(() => {
+                if (loader.classList.contains('hidden')) return;
+                loader.classList.add('hidden');
+                mainContent.style.display = 'block';
+                desktopVideo.play();
+            }, 5000); // Fallback to hide loader after 8 seconds if video is still not ready
         }
     </script>
 </body>
