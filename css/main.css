@@ -2588,7 +2588,7 @@ strong {
 
 .header_background {
   z-index: 1;
-  background-image: url("/image/header-banner.jpg");
+  background-image: url("/image/header-banner.webp");
   background-position: 50% 10%;
   background-repeat: no-repeat;
   background-size: cover;
