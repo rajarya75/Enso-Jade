@@ -6676,7 +6676,7 @@ iframe {
   z-index: 9999;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  /* transition: opacity 0.5s ease, visibility 0.5s ease; */
 }
 
 /* Fade out effect */
@@ -6688,8 +6688,8 @@ iframe {
 /* Hide the main content initially */
 #main-content {
   display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  /* opacity: 0; */
+  /* transition: opacity 0.5s ease; */
 }
 
 /* Show desktop video by default */

@@ -14,10 +14,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
-    <script defer="" src="js/interact.min.js"></script>
-    <script defer="" src="js/Draggable.min.js"></script>
-    <script defer="" src="js/TweenMax.min.js"></script>
-    <script defer="" src="js/draggabilly.pkgd.js"></script>
+    <script defer src="js/interact.min.js"></script>
+    <script defer src="js/Draggable.min.js"></script>
+    <script defer src="js/TweenMax.min.js"></script>
+    <script defer src="js/draggabilly.pkgd.js"></script>
     <!---- custom scrollbar ---->
     <style>
         ::-webkit-scrollbar {
@@ -1328,11 +1328,11 @@
     <script src="js/jquery.min.js" type="text/javascript" crossorigin="anonymous"></script>
     <script src="js/webflow.86dd39939.js" type="text/javascript"></script>
     <!-- virtual keyboard JS -->
-    <script defer="" src="js/jquery.keyboard.js"></script>
-    <script defer="" src="js/jquery.mousewheel.js"></script>
-    <script defer="" src="js/jquery.keyboard.extension-extender.js"></script>
-    <script defer="" src="js/jquery.keyboard.extension-typing.js"></script>
-    <script src="js/leadForm.js"></script>
+    <script defer src="js/jquery.keyboard.js"></script>
+    <script defer src="js/jquery.mousewheel.js"></script>
+    <script defer src="js/jquery.keyboard.extension-extender.js"></script>
+    <script defer src="js/jquery.keyboard.extension-typing.js"></script>
+    <script src="js/leadForm.js" defer></script>
     <script>
         document.querySelectorAll(".todelete").forEach((el) => el.remove());
     </script>
@@ -1476,7 +1476,7 @@
         initSlider('.slider4', '.slide4', '.prev4', '.next4');
     </script>
     <!-- Contact Form modal -->
-    <script>
+    <script defer>
         document.querySelector('.contactFormTrigger').addEventListener('click', function () {
             document.getElementById('popupForm').style.display = 'flex';
         });
@@ -1497,7 +1497,7 @@
 
     </script>
     <!-- Thank you modal -->
-    <script>
+    <script defer>
         document.querySelector('.thankYouTrigger').addEventListener('click', function () {
             document.getElementById('popupForm1').style.display = 'flex';
         });
@@ -1514,7 +1514,7 @@
 
     </script>
     <!-- Specification modal -->
-    <script>
+    <script defer>
         document.querySelector('.specificationTrigger').addEventListener('click', function () {
             document.getElementById('popupForm2').style.display = 'flex';
         });
@@ -1543,7 +1543,7 @@
         });
 
     </script>
-    <script>
+    <script defer>
         // JavaScript to hide the loader and show the main content
         const loader = document.getElementById('loader');
         const mainContent = document.getElementById('main-content');
@@ -1558,18 +1558,18 @@
             setTimeout(() => {
                 loader.classList.add('hidden');
                 mainContent.style.display = 'block';
-                setTimeout(() => {
-                    mainContent.style.opacity = '1';
-                }, 50); // Small delay to ensure display block is applied first
-            }, 8000);
+                // setTimeout(() => {
+                //     mainContent.style.opacity = '1';
+                // }, 50); 
+            }, 6000);
         } else {
             // On desktop, hide the loader when the video ends
             activeVideo.addEventListener('ended', () => {
                 loader.classList.add('hidden');
                 mainContent.style.display = 'block';
-                setTimeout(() => {
-                    mainContent.style.opacity = '1';
-                }, 50);
+                // setTimeout(() => {
+                // mainContent.style.opacity = '1';
+                // }, 50);
             });
         }
     </script>
