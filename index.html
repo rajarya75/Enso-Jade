@@ -1554,20 +1554,25 @@
         const activeVideo = window.innerWidth <= 767 ? mobileVideo : desktopVideo;
 
         if (window.innerWidth <= 767) {
-            // On mobile devices, try to play the video automatically
-            mobileVideo.muted = true; // Ensure the video is muted
+            // On mobile devices, ensure the video is muted and try to play it automatically
+            mobileVideo.muted = true; // Required for autoplay on mobile
+            mobileVideo.playsInline = true; // Ensures video plays inline instead of full screen on iOS
+            mobileVideo.autoplay = true; // Attempt to autoplay
+
+            // Try to play the video programmatically
             mobileVideo.play().catch(error => {
-                // If autoplay fails, add an event listener to play when the user interacts
+                console.log("Autoplay failed:", error);
+                // If autoplay fails, provide a fallback for user interaction
                 mobileVideo.addEventListener('click', () => {
                     mobileVideo.play();
                 });
             });
 
-            // Hide the loader after 8 seconds
+            // Hide the loader after 6 seconds
             setTimeout(() => {
                 loader.classList.add('hidden');
                 mainContent.style.display = 'block';
-            }, 6000); // Set to 8 seconds
+            }, 6000); // Set to 6 seconds
         } else {
             // On desktop, hide the loader when the video ends
             activeVideo.addEventListener('ended', () => {
