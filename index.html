@@ -1326,7 +1326,7 @@
         </div>
     </div>
     <script src="js/jquery.min.js" type="text/javascript" crossorigin="anonymous"></script>
-    <script src="js/webflow.86dd39939.js" type="text/javascript"></script>
+    <script defer src="js/webflow.86dd39939.js" type="text/javascript"></script>
     <!-- virtual keyboard JS -->
     <script defer src="js/jquery.keyboard.js"></script>
     <script defer src="js/jquery.mousewheel.js"></script>
@@ -1337,7 +1337,7 @@
         document.querySelectorAll(".todelete").forEach((el) => el.remove());
     </script>
     <!-- Disable Scroll Script -->
-    <script>
+    <script defer>
         var Webflow = Webflow || [];
         let $body = $(document.body);
         let scrollPosition = 0;
@@ -1379,7 +1379,7 @@
             });
         });
     </script>
-    <script>
+    <script defer>
         $(document).ready(function () {
             $("img").on("contextmenu", function () {
                 return false;
@@ -1387,14 +1387,14 @@
         });
     </script>
     <!-- Video - Disabilitare click destro -->
-    <script>
+    <script defer>
         $(document).ready(function () {
             $("video").on("contextmenu", function () {
                 return false;
             });
         });
     </script>
-    <script>
+    <script defer>
         $(document).ready(function () {
             $("body").addClass("locked");
             setTimeout(function () {
@@ -1403,22 +1403,22 @@
         });
     </script>
     <!---- Slider ---->
-    <script>
+    <script defer>
         $(document).ready(function () {
             $("#slider_amenities .w-slider-nav div:nth-child(2)").trigger("click");
         });
     </script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/inview.min.js"></script>
-    <script>
+    <script defer src="js/player.js"></script>
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/jquery.waypoints.min.js"></script>
+    <script defer src="js/inview.min.js"></script>
+    <script defer>
         var iframe = document.querySelector("iframe");
         var player = new Vimeo.Player(iframe);
         player.play();
         iframe;
     </script>
-    <script>
+    <script defer>
         var vimeo_player = new Vimeo.Player("video");
         vimeo_player.ready().then(function () {
             // vimeo_player.setVolume(0);
@@ -1438,7 +1438,7 @@
         });
     </script>
     <!-- my slider -->
-    <script>
+    <script defer>
         function initSlider(sliderClass, slideClass, prevButtonClass, nextButtonClass) {
             let currentIndex = 0;
             const slides = document.querySelectorAll(slideClass);
@@ -1531,7 +1531,7 @@
 
     </script>
     <!-- Add My Custom class -->
-    <script>
+    <script defer>
         document.addEventListener("scroll", function () {
             const header = document.querySelector(".header_background");
 
@@ -1543,7 +1543,7 @@
         });
 
     </script>
-    <script>
+    <script defer>
         // JavaScript to hide the loader and show the main content
         const loader = document.getElementById('loader');
         const mainContent = document.getElementById('main-content');
