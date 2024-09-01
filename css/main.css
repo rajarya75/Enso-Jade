@@ -6689,7 +6689,7 @@ iframe {
 }
 
 #main-content {
-  /* display: none; */
+  display: none;
 }
 
 .myloader video.desktop-video {
