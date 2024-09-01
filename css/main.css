@@ -3048,7 +3048,7 @@ strong {
 }
 
 .slide_location._01 {
-  background-image: url("../image/location1.png");
+  background-image: url("../image/location1.webp");
 }
 
 .slide_location._02 {
@@ -3093,12 +3093,12 @@ strong {
 }
 
 .image_location._01 {
-  background-image: url("../image/location01.jpg");
+  background-image: url("../image/location01.webp");
   height: 43vh;
 }
 
 .image_location._02 {
-  background-image: url("../image/location02.jpg");
+  background-image: url("../image/location02.webp");
   height: 60vh;
 }
 
@@ -3385,20 +3385,20 @@ strong {
 }
 
 .image_lifestyle._01 {
-  background-image: url("/image/image_lifestyle _01.png");
+  background-image: url("/image/image_lifestyle _01.webp");
   background-position: 50%;
   height: 102vh;
 }
 
 .image_lifestyle._02 {
-  background-image: url("/image/image_lifestyle _02.png");
+  background-image: url("/image/image_lifestyle _02.webp");
   background-position: 50%;
   background-size: cover;
   height: 50vh;
 }
 
 .image_lifestyle._03 {
-  background-image: url("/image/image_lifestyle _03.png");
+  background-image: url("/image/image_lifestyle _03.webp");
   background-position: 50%;
   background-size: cover;
   height: 50vh;
@@ -5996,19 +5996,19 @@ iframe {
   margin-bottom: 10px;
 }
 .slide_location.myslide1 {
-  background-image: url(../image/myslide1.jpg);
+  background-image: url(../image/myslide1.webp);
 }
 .slide_location.myslide2 {
-  background-image: url(../image/myslide2.jpg);
+  background-image: url(../image/myslide2.webp);
 }
 .slide_location.myslide3 {
-  background-image: url(../image/myslide3.jpg);
+  background-image: url(../image/myslide3.webp);
 }
 .slide_location.myslide4 {
-  background-image: url(../image/myslide4.jpg);
+  background-image: url(../image/myslide4.webp);
 }
 .slide_location.myslide5 {
-  background-image: url(../image/myslide5.jpg);
+  background-image: url(../image/myslide5.webp);
 }
 .container.in-frame.frame1 {
   width: 100%;
@@ -6681,23 +6681,17 @@ iframe {
   z-index: 9999;
   opacity: 1;
   visibility: visible;
-  /* transition: opacity 0.5s ease, visibility 0.5s ease; */
 }
 
-/* Fade out effect */
 .myloader.hidden {
   opacity: 0;
   visibility: hidden;
 }
 
-/* Hide the main content initially */
 #main-content {
-  display: none;
-  /* opacity: 0; */
-  /* transition: opacity 0.5s ease; */
+  /* display: none; */
 }
 
-/* Show desktop video by default */
 .myloader video.desktop-video {
   display: block;
   width: 100%;
@@ -6705,7 +6699,6 @@ iframe {
   object-fit: cover;
 }
 
-/* Hide mobile video by default */
 .myloader video.mobile-video {
   display: none;
 }
