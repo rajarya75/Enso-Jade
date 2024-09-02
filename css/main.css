@@ -6531,32 +6531,68 @@ iframe {
   color: var(--snow);
 }
 
+.mobile {
+  display: none;
+}
+
 @media (max-width: 770px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .project .mobile {
+    padding: 20px 15px;
+  }
+  .lifestyle .mobile {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -8px;
+  }
   .header_background {
     left: 0;
     right: 0;
-    top: 210px;
+    top: 225px;
   }
   .header_component {
     padding-top: 60px;
   }
   .header_component .text-block-15 {
     color: var(--primary);
+    font-size: 16px;
   }
   .header_component .heading {
-    font-size: 20px;
-    padding-bottom: 0;
+    font-size: 22px;
+    padding-bottom: 5px;
+    max-width: 300px;
   }
   .interiors .paragraph_-container {
-    padding: 20px;
-    background-color: var(--white);
+    padding: 60px 0 40px;
   }
+  .interiors .image_cover {
+    height: auto;
+  }
+  .title_paragraph.in-floorplan {
+    font-size: 16px !important;
+  }
+
   .prime {
     flex-wrap: wrap;
+  }
+  .prime .paragraph {
+    text-align: center;
+  }
+  .prime1 {
+    padding-left: 0;
   }
   .prime2 {
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .prime3 img {
+    height: 220px;
+    object-fit: cover;
   }
   .prime1,
   .prime2,
@@ -6579,7 +6615,10 @@ iframe {
     width: 88vw;
   }
   .title_paragraph.dark-bg.in-contact {
-    font-size: 18px;
+    width: 100%;
+  }
+  .contact .text-block-14 {
+    text-align: center;
   }
   .map {
     height: 100vh;
@@ -6589,6 +6628,18 @@ iframe {
     font-size: 16px;
     padding: 10px 30px;
   }
+  #contactForm .flex-between {
+    flex-wrap: wrap;
+  }
+  #contactForm .submit-btn {
+    justify-content: center;
+  }
+  #contactForm label {
+    color: #6bb284;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: -5px;
+  }
   #contactForm input,
   #contactForm select,
   #contactForm textarea {
@@ -6597,8 +6648,78 @@ iframe {
   #popupForm .form-container {
     padding: 10px 0px !important;
   }
+  .paragraph-heading_block {
+    align-items: center;
+  }
+  .project .container {
+    flex-direction: column-reverse;
+  }
+  .project .paragraph_-container {
+    padding: 40px 0 0;
+    text-align: center;
+  }
+  .project .image_-container {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .project .title_paragraph {
+    max-width: 310px;
+  }
+  .paragraph_wrap {
+    align-items: center;
+  }
+  .lifestyle .container {
+    flex-direction: column;
+  }
+  .lifestyle .paragraph-heading_block {
+    margin-bottom: 30px;
+  }
   .title_paragraph {
+    font-size: 22px !important;
     line-height: 30px;
+    text-align: center;
+  }
+  .paragraph_block {
+    align-items: center;
+  }
+  .paragraph {
+    text-align: center;
+  }
+  .paragraph.align-left.dark-bg {
+    text-align: center;
+    font-size: 14px;
+  }
+  .title_paragraph.allign-left {
+    text-align: center;
+  }
+  .title_section.alligh-left {
+    text-align: center;
+    width: 100%;
+  }
+  .icon_amenities {
+    width: 60px;
+    height: 60px;
+    bottom: -26px;
+  }
+  .title_paragraph.dark-bg.in-amenities {
+    font-size: 18px !important;
+  }
+  .txt__wrap_slide.amenities {
+    padding: 50px 14px;
+  }
+  .location .container {
+    flex-direction: column-reverse;
+  }
+  .location .mobile {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .paragraph_wrap.in-location {
+    padding: 40px 0px;
+    background: transparent;
+  }
+  .paragraph-heading_block.in-location {
+    margin: 0 auto 30px auto;
   }
   #popupForm2 .popup-content {
     width: 100%;
@@ -6653,13 +6774,21 @@ iframe {
   .prev4 {
     left: -10px;
   }
-  .paragraph-heading_block.in-location {
-    margin: 0 auto 20px 0;
+  .footer_row .top {
+    flex-wrap: wrap;
   }
-  .header_container1 {
-    .text-block-15 {
-      margin: 5px auto;
-    }
+  .footer_row .top div {
+    width: 100%;
+  }
+  .footer_row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer_component {
+    padding: 20px 20px 20px;
+  }
+  .footer_row .bottom {
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 480px) {
