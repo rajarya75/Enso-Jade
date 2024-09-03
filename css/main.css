@@ -6860,7 +6860,10 @@ iframe {
   font-size: 14px;
   color: #fefaee;
 }
-.mobile.mmap {
+.mobile.overflow {
+  overflow-x: hidden;
+}
+.mobile .mmap {
   transform: scale(2);
   margin-top: 100px;
 }
