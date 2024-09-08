@@ -2645,7 +2645,7 @@ strong {
 }
 
 .list_nav {
-  width: 370.828px;
+  width: 530px;
   margin-bottom: 0;
   padding-left: 0;
   display: flex;
@@ -6890,6 +6890,22 @@ iframe {
   cursor: pointer;
 }
 
+li.list-item.user {
+  white-space: nowrap;
+}
+li.list-item.user img {
+  margin-top: -2px;
+  margin-right: 3px;
+}
+
+li.list-item.user a {
+  border: 1px solid #010d07;
+  padding: 10px 12px;
+  font-weight: 400;
+  @media (max-width: 768px) {
+    border: 1px solid var(--snow);
+  }
+}
 /* Media query for mobile devices */
 @media only screen and (max-width: 767px) {
   .myloader video.desktop-video {
