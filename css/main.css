@@ -2770,7 +2770,7 @@ strong {
   position: relative;
 }
 
-.intro_wrap {
+.intro_wrap1 {
   border-top: 1px solid #6bb284;
   flex-direction: column;
   justify-content: center;
@@ -2958,7 +2958,7 @@ strong {
 
 .paragraph_wrap.in-location {
   z-index: 2;
-  background-color: var(--white);
+  background-color: var(--snow);
   text-align: left;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.7),
@@ -4682,7 +4682,7 @@ strong {
     padding: 0 30px 30px;
   }
 
-  .intro_wrap {
+  .intro_wrap1 {
     margin-top: 60px;
     margin-bottom: 30px;
     padding-top: 60px;
@@ -5329,7 +5329,7 @@ strong {
     padding-right: 0;
   }
 
-  .intro_wrap {
+  .intro_wrap1 {
     margin-top: 60px;
     margin-left: 20px;
     margin-right: 20px;
@@ -6516,7 +6516,6 @@ iframe {
   z-index: 1000;
 }
 .call img {
-  background: #fff;
   width: 50px;
 }
 
@@ -6609,7 +6608,7 @@ iframe {
   .gallery {
     height: 54vh !important;
   }
-  .intro_wrap {
+  .intro_wrap1 {
     width: 100% !important;
   }
   .image_-container.speimg {
@@ -6622,8 +6621,8 @@ iframe {
     text-align: center;
   }
   .map {
-    height: 122vh;
-    background-position: -70px;
+    height: 127vh;
+    background-position: 0px;
   }
   .map h1 {
     text-align: left;
@@ -6794,6 +6793,9 @@ iframe {
   .footer_row .bottom {
     flex-wrap: wrap;
   }
+  .interiors .container.reverse {
+    flex-direction: column-reverse;
+  }
 }
 @media (max-width: 480px) {
   .gallery {
@@ -6862,10 +6864,30 @@ iframe {
 }
 .mobile.overflow {
   overflow: hidden;
+  position: relative;
+}
+.zoom {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
 }
 .mobile .mmap {
   transform: scale(2);
   margin-top: 98px;
+}
+
+#popupForm3 .popup-content {
+  background-image: none;
+  padding: 0;
+}
+.close-btn3 {
+  color: var(--secondary);
+  font-size: 35px;
+  position: absolute;
+  right: 5px;
+  top: -30px;
+  cursor: pointer;
 }
 
 /* Media query for mobile devices */

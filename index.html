@@ -52,7 +52,7 @@
         <nav class="nav_component">
             <a data-w-id="74ffed73-b090-a81b-77cd-1096671d6121" href="#" class="menu_icon w-inline-block"></a>
             <a href="/" aria-current="page" class="logo_nav is-mobile w-inline-block w--current">
-                <img src="image/logo.png" loading="lazy" alt="" class="image-logo" />
+                <img src="image/logo.svg" loading="lazy" alt="" class="image-logo" />
             </a>
             <div class="list_container">
                 <div class="list_wrap">
@@ -67,7 +67,7 @@
                             <a href="#amenities" class="nav_link">Amenities</a>
                         </li>
                     </ul>
-                    <a href="/" aria-current="page" class="logo_nav w-inline-block w--current"><img src="image/logo.png"
+                    <a href="/" aria-current="page" class="logo_nav w-inline-block w--current"><img src="image/logo.svg"
                             loading="lazy" alt="" class="image-logo" /></a>
                     <ul role="list" class="list_nav">
                         <li class="list-item is-first">
@@ -120,7 +120,7 @@
         <div class="page_wrapper">
             <div class="intro">
                 <div id="discover" class="ancor intro"></div>
-                <div class="intro_wrap">
+                <div class="intro_wrap1">
                     <div class="title_paragraph in-intro"> A New Standard for <br /> Luxury Living </div>
                     <p class="paragraph is-intro"> At ENSO Jade, homes of unmatched quality <br /> converge with verdant
                         landscapes and a <br /> complete range of amenities, setting a new <br />benchmark for
@@ -626,7 +626,7 @@
             </div>
             <div class="interiors">
                 <div class="section snow_bg">
-                    <div data-w-id="e00f949b-3d95-efaf-1fec-99935adf5c80" class="container">
+                    <div data-w-id="e00f949b-3d95-efaf-1fec-99935adf5c80" class="container reverse">
                         <div class="paragraph_-container">
                             <div class="paragraph_wrap">
                                 <div class="paragraph-heading_block spetext">
@@ -870,6 +870,7 @@
             </div>
             <div class="mobile overflow">
                 <img class="mmap" src="image/map.webp" alt="">
+                <img class="zoom" src="/image/zoom.png" alt="">
             </div>
             <div class="contact">
                 <div id="contacts" class="ancor contacts"></div>
@@ -1344,7 +1345,7 @@
                             <p class="required-field">*Required fields</p>
                             <div class="submit-btn">
                                 <button class="button_txt is-negative thankYouTrigger invalid" type="submit" disabled>
-                                    <a href="https://ensojade.com/image/brochure/Jade_%20Brochure.pdf" target="_blank"
+                                    <a href="https://ensojade.com/image/brochure/Enso_Jade_Brochure.pdf" target="_blank"
                                         class="brochure-link">Submit to Download Brochure</a>
                                 </button>
                             </div>
@@ -1380,6 +1381,13 @@
         <div class="popup-overlay" id="popupForm2">
             <div class="popup-content">
                 <span class="close-btn2">&times;</span>
+            </div>
+        </div>
+        <!-- Map modal -->
+        <div class="popup-overlay" id="popupForm3">
+            <div class="popup-content">
+                <span class="close-btn3">&times;</span>
+                <img src="/image/map-mobile.webp" alt="">
             </div>
         </div>
     </div>
@@ -1573,6 +1581,23 @@
 
         document.querySelector('.close-btn2').addEventListener('click', function () {
             document.getElementById('popupForm2').style.display = 'none';
+        });
+
+        document.querySelector('.popup-overlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+    </script>
+    <!-- Map modal -->
+    <script defer>
+        document.querySelector('.zoom').addEventListener('click', function () {
+            document.getElementById('popupForm3').style.display = 'flex';
+        });
+
+        document.querySelector('.close-btn3').addEventListener('click', function () {
+            document.getElementById('popupForm3').style.display = 'none';
         });
 
         document.querySelector('.popup-overlay').addEventListener('click', function (e) {
