@@ -4,19 +4,17 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const fullName = document.getElementById("name").value;
-    const phoneNumber = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
-    const enquiryType = document.getElementById("enquiry").value;
-    const message = document.getElementById("message").value;
+    // Collect form data
+    const formData = new FormData(this);
 
-    const data = {
-      name: fullName,
-      email: email,
+    // Prepare data according to the API schema
+    const jsonData = {
+      name: formData.get("name"),
+      email: formData.get("email"),
       mobileCode: "+971",
-      contactNumber: phoneNumber,
-      message: message,
-      typeOfEnquiry: enquiryType,
+      contactNumber: formData.get("phone"),
+      message: formData.get("message"),
+      typeOfEnquiry: formData.get("enquiry"),
       from: "Enso Jade",
     };
 
@@ -26,17 +24,27 @@ document
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(jsonData),
     })
       .then((response) => response.json())
       .then((data) => {
-        // On success, hide the form and show the success message
-        document.getElementById("contactForm").style.display = "none";
-        document.getElementById("successMessage").style.display = "block";
+        if (data.success) {
+          document.querySelector(".w-form-done").style.display = "block";
+          document.querySelector(".w-form-fail").style.display = "none";
+          document.getElementById("contactForm").reset();
+        } else {
+          document.querySelector(".w-form-fail").style.display = "block";
+          document.querySelector(".w-form-done").style.display = "none";
+          document.getElementById("responseMessage").textContent =
+            data.message || "Submission failed.";
+        }
       })
       .catch((error) => {
-        // Handle error - maybe show an error message
         console.error("Error:", error);
+        document.querySelector(".w-form-fail").style.display = "block";
+        document.querySelector(".w-form-done").style.display = "none";
+        document.getElementById("responseMessage").textContent =
+          "Oops! Something went wrong while submitting the form.";
       });
   });
 
