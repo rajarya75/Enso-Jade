@@ -47,11 +47,11 @@ document
     event.preventDefault();
 
     // Gather form data
-    const fullName = document.getElementById("name").value;
-    const phoneNumber = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
-    const enquiryType = document.getElementById("enquiry").value;
-    const message = document.getElementById("message").value;
+    const fullName = document.getElementById("name1").value;
+    const phoneNumber = document.getElementById("phone1").value;
+    const email = document.getElementById("email1").value;
+    const enquiryType = document.getElementById("enquiry1").value;
+    const message = document.getElementById("message1").value;
 
     const data = {
       name: fullName,
@@ -72,9 +72,6 @@ document
       .then((response) => response.json())
       .then((data) => {
         if (data.status) {
-          document.getElementsByClassName("downloadBrochure").style.display =
-            "none";
-
           document.getElementById("popupForm").style.display = "none";
           document.getElementById("popupForm1").style.display = "flex";
           window.open("/image/brochure/Enso_Jade_Brochure.pdf", "_blank");
