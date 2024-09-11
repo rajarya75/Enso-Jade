@@ -67,7 +67,7 @@ document
     fetch("https://betaapi.enso.inc/api/website/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(jsonData),
+      body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
