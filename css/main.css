@@ -6116,21 +6116,21 @@ iframe {
 }
 
 /* New contact form */
-#contactForm .mb-20 {
+.contactForm .mb-20 {
   margin-bottom: 50px;
 }
-#contactForm .flex-between {
+.contactForm .flex-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
 }
-#contactForm .flex-between div {
+.contactForm .flex-between div {
   width: 100%;
 }
-#contactForm input,
-#contactForm select,
-#contactForm textarea {
+.contactForm input,
+.contactForm select,
+.contactForm textarea {
   width: 100%;
   padding: 15px 5px;
   background: transparent;
@@ -6140,27 +6140,27 @@ iframe {
   font-size: 16px;
   border-radius: 0;
 }
-#contactForm select {
+.contactForm select {
   color: var(--secondary);
 }
-#contactForm select option {
+.contactForm select option {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-#contactForm input:focus-visible,
-#contactForm select:focus-visible,
-#contactForm textarea:focus-visible {
+.contactForm input:focus-visible,
+.contactForm select:focus-visible,
+.contactForm textarea:focus-visible {
   border: 0;
   outline: none;
   border-bottom: 1px solid var(--snow);
 }
-#contactForm label {
+.contactForm label {
   color: #6bb284;
 }
-#contactForm textarea {
+.contactForm textarea {
   height: 60px;
 }
-#contactForm .submit-btn {
+.contactForm .submit-btn {
   display: flex;
   justify-content: flex-end;
 }
@@ -6689,21 +6689,21 @@ iframe {
     font-size: 16px;
     padding: 10px 30px;
   }
-  #contactForm .flex-between {
+  .contactForm .flex-between {
     flex-wrap: wrap;
   }
-  #contactForm .submit-btn {
+  .contactForm .submit-btn {
     justify-content: center;
   }
-  #contactForm label {
+  .contactForm label {
     color: #6bb284;
     font-weight: 400;
     font-size: 12px;
     margin-bottom: -5px;
   }
-  #contactForm input,
-  #contactForm select,
-  #contactForm textarea {
+  .contactForm input,
+  .contactForm select,
+  .contactForm textarea {
     padding: 10px 5px;
   }
   #popupForm .form-container {

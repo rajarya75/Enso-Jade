@@ -42,7 +42,7 @@ document
 
 // Download Brochure ==============================================================
 document
-  .getElementsByClassName("downloadBrochure")
+  .getElementById("downloadBrochure")
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
