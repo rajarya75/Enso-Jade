@@ -1339,19 +1339,17 @@
                             </div>
                             <p class="required-field">*Required fields</p>
                             <div class="submit-btn">
-                                <button class="button_txt is-negative thankYouTrigger invalid" type="submit" disabled>
-                                    <a href="https://ensojade.com/image/brochure/Enso_Jade_Brochure.pdf" target="_blank"
-                                        class="brochure-link">Submit to Download Brochure</a>
+                                <button class="button_txt is-negative" type="submit"> Submit to Download Brochure
                                 </button>
                             </div>
                         </form>
-                        <p id="responseMessage"></p>
+                        <!-- <p id="responseMessage"></p>
                         <div class="w-form-done" style="display:none;">
                             <div>Thank you! Your submission has been received!</div>
                         </div>
                         <div class="w-form-fail" style="display:none;">
                             <div>Oops! Something went wrong while submitting the form.</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -1553,9 +1551,9 @@
     </script>
     <!-- Thank you modal -->
     <script defer>
-        document.querySelector('.thankYouTrigger').addEventListener('click', function () {
-            document.getElementById('popupForm1').style.display = 'flex';
-        });
+        // document.querySelector('.thankYouTrigger').addEventListener('click', function () {
+        //     document.getElementById('popupForm1').style.display = 'flex';
+        // });
 
         document.querySelector('.close-btn1').addEventListener('click', function () {
             document.getElementById('popupForm1').style.display = 'none';

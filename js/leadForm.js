@@ -47,19 +47,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const requiredFields = form.querySelectorAll("[required]");
 
   // Function to check if all required fields are filled
-  function checkFormValidity() {
-    let allValid = Array.from(requiredFields).every(
-      (field) => field.value.trim() !== ""
-    );
-    submitButton.disabled = !allValid;
-    submitButton.classList.toggle("invalid", !allValid);
-  }
+  // function checkFormValidity() {
+  //   let allValid = Array.from(requiredFields).every(
+  //     (field) => field.value.trim() !== ""
+  //   );
+  //   submitButton.disabled = !allValid;
+  //   submitButton.classList.toggle("invalid", !allValid);
+  // }
 
   // Attach input event listeners to all required fields
-  requiredFields.forEach((field) =>
-    field.addEventListener("input", checkFormValidity)
-  );
-  checkFormValidity(); // Initial validity check
+  // requiredFields.forEach((field) =>
+  //   field.addEventListener("input", checkFormValidity)
+  // );
+  // checkFormValidity();
 
   // Function to handle form submission
   form.addEventListener("submit", function (event) {
@@ -83,21 +83,19 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.success) {
-          form.reset();
-          checkFormValidity();
+        if (data.status) {
+          // Adjust based on your API response
+          // Hide form and open thank you modal
+          document.getElementById("brochureForm").style.display = "none";
+
+          document.getElementById("popupForm1").style.display = "flex";
+
+          // Open PDF in new tab
+          window.open("/image/brochure/Enso_Jade_Brochure.pdf", "_blank");
         } else {
-          handleFormError(data.message || "Submission failed.");
+          alert("There was an issue with your submission. Please try again.");
         }
       })
-      .catch(() =>
-        handleFormError("Oops! Something went wrong while submitting the form.")
-      );
+      .catch((error) => console.error("Error:", error));
   });
-
-  // Function to handle form submission errors
-  function handleFormError(message) {
-    console.error("Error:", message);
-    console.log(message);
-  }
 });
