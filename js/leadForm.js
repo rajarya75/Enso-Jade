@@ -41,38 +41,26 @@ document
   });
 
 // Download Brochure ==============================================================
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".downloadBrochure");
-  const submitButton = form.querySelector(".thankYouTrigger");
-  const requiredFields = form.querySelectorAll("[required]");
-
-  // Function to check if all required fields are filled
-  // function checkFormValidity() {
-  //   let allValid = Array.from(requiredFields).every(
-  //     (field) => field.value.trim() !== ""
-  //   );
-  //   submitButton.disabled = !allValid;
-  //   submitButton.classList.toggle("invalid", !allValid);
-  // }
-
-  // Attach input event listeners to all required fields
-  // requiredFields.forEach((field) =>
-  //   field.addEventListener("input", checkFormValidity)
-  // );
-  // checkFormValidity();
-
-  // Function to handle form submission
-  form.addEventListener("submit", function (event) {
+document
+  .getElementsByClassName("downloadBrochure")
+  .addEventListener("submit", function (event) {
     event.preventDefault();
-    const formData = new FormData(form);
-    const jsonData = {
-      name: formData.get("name"),
-      email: formData.get("email"),
+
+    // Gather form data
+    const fullName = document.getElementById("name").value;
+    const phoneNumber = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const enquiryType = document.getElementById("enquiry").value;
+    const message = document.getElementById("message").value;
+
+    const data = {
+      name: fullName,
+      email: email,
       mobileCode: "+971",
-      contactNumber: formData.get("phone"),
-      message: formData.get("message"),
-      typeOfEnquiry: formData.get("enquiry"),
-      from: "Ensojade",
+      contactNumber: phoneNumber,
+      message: message,
+      typeOfEnquiry: enquiryType,
+      from: "Enso Jade",
     };
 
     // Send the form data to the API
@@ -84,13 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         if (data.status) {
-          // Adjust based on your API response
-          // Hide form and open thank you modal
-          document.getElementById("brochureForm").style.display = "none";
+          document.getElementsByClassName("downloadBrochure").style.display =
+            "none";
 
+          document.getElementById("popupForm").style.display = "none";
           document.getElementById("popupForm1").style.display = "flex";
-
-          // Open PDF in new tab
           window.open("/image/brochure/Enso_Jade_Brochure.pdf", "_blank");
         } else {
           alert("There was an issue with your submission. Please try again.");
@@ -98,4 +84,3 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => console.error("Error:", error));
   });
-});
