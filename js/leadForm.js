@@ -21,7 +21,7 @@ document
     };
 
     // Send data to the API using fetch
-    fetch("https://betaapi.enso.inc/api/website/enquiry", {
+    fetch("https://api.enso.inc/api/website/enquiry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ document
     };
 
     // Send the form data to the API
-    fetch("https://betaapi.enso.inc/api/website/enquiry", {
+    fetch("https://api.enso.inc/api/website/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
