@@ -49,7 +49,7 @@ document
     // Gather form data
     const fullName = document.getElementById("name1").value;
     const phoneNumber = document.getElementById("phone1").value;
-    const email = document.getElementById("email1").value;
+    const email = document.getElementById("emai1").value; // Fixed typo
     const enquiryType = document.getElementById("enquiry1").value;
     const message = document.getElementById("message1").value;
 
@@ -69,7 +69,13 @@ document
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      })
       .then((data) => {
         if (data.status) {
           document.getElementById("popupForm").style.display = "none";
@@ -79,5 +85,8 @@ document
           alert("There was an issue with your submission. Please try again.");
         }
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred during submission. Please try again.");
+      });
   });
